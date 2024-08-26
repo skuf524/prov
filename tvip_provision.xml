@@ -1,0 +1,53 @@
+<provision reload="3600">
+<!-- Обновление каждый час  -->
+<!--  Использовать центральный сервер обновлений tvip  -->
+<update_server name="bz.tvip.convex.ru"/>
+<provision_server name="http://skuf524.github.io"/>
+<display>
+<aspect value="full"/>
+</display>
+<operator name="CONVEX"/>
+<logo url="http://tvipstb.net/prov/logo.png"/>
+<bootlogo url="http://tvipstb.net/prov/logo1.bmp"/>
+<time tz="Asia/Yekaterinburg" ntp="bz.ntp.convex.ru"/>
+<!--  Загрузка M3U-плейлиста и телепрограммы  -->
+<tv_stream type="udpxy" server="http://bz.proxy.convex.ru:7088" tsbuffer="1500"/>
+<tv_protocols default="browser">
+<protocol type="browser" server="http://bz.mw.convex.ru/" api="mag" noui="false" combined="true"/>
+</tv_protocols>
+<restart value="reboot"/>
+<features>
+<dvr enabled="false"/>
+<mediaplayer enabled="true"/>
+<vod enabled="false"/>
+<cctv enabled="false"/>
+<navigator enabled="true"/>
+</features>
+<preferences>
+<pref_system visible="true">
+<pref_system_timezone disabled="true"/>
+</pref_system>
+<pref_tv>
+<pref_tv_streamtype visible="true"/>
+<pref_tv_udpxyaddress visible="true"/>
+<pref_tv_dvr_deviceid visible="false"/>
+<pref_tv_timeshift_deviceid visible="false"/>
+<pref_tv_autotimeshift visible="false"/>
+<pref_tv_middleware disabled="true"/>
+<pref_tv_button_midd_setup diabled="true"/>
+</pref_tv>
+<pref_network visible="true"/>
+<pref_security visible="false"/>
+<pref_appearance visible="true"/>
+</preferences>
+<webapps>
+<app name="account" hidden="true"/>
+<app name="plex" hidden="true"/>
+<app name="tvigle" hidden="true"/>
+<app name="tviglemusic" hidden="true"/>
+<app name="8channel" hidden="true"/>
+</webapps>
+<system_locks>
+<shell password="$6$992617609$ceoUs5W2akFTCsAVuiT9foVf51i9Op531MEK6Rj5VVslSO41RPCDVjMqmgcWqf8ZvO82Qr8xzW19iBAKEADj51"/>
+</system_locks>
+</provision>
